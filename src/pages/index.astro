@@ -13,23 +13,76 @@ const metadata = {
 };
 ---
 
+<head>
+  <title>{metadata.title}</title>
+  <meta name="description" content={metadata.description} />
+  <meta name="keywords" content="premium rice, sustainable rice, rice factory, rice products" />
+  <meta property="og:title" content={metadata.title} />
+  <meta property="og:description" content={metadata.description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/images/hero-image.png" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={metadata.title} />
+  <meta name="twitter:description" content={metadata.description} />
+  <meta name="twitter:image" content="/assets/images/hero-image.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Premium Rice Factory",
+      "image": "/assets/images/hero-image.png",
+      "@id": "https://yourwebsite.com",
+      "url": "https://yourwebsite.com",
+      "telephone": "+62 811-111-1111",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Ki Kemas Rindo, Sungai Buaya",
+        "addressLocality": "Palembang",
+        "addressRegion": "Sumatera Selatan",
+        "postalCode": "30967",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -3.04225009693358,
+        "longitude": 104.77318417586093
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ]
+    }
+  </script>
+</head>
+
 <Layout metadata={metadata}>
   <!-- Hero Section -->
   <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Shop Products',
-        href: '#products',
-      },
-      { text: 'Learn More', href: '#about' },
-    ]}
-    image={ { src: '~/assets/images/hero-image.png', alt: 'Premium Rice Factory' } }
+    actions={[{
+      variant: 'primary',
+      text: 'Shop Products',
+      href: '#products',
+    }, {
+      text: 'Learn More',
+      href: '#about',
+    }]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'Premium Rice Factory' }}
   >
     <Fragment slot="title">
       Fresh, High-Quality <span class="highlight text-accent">Rice</span> Directly from Our Factory
     </Fragment>
-
     <Fragment slot="subtitle">
       Premium white and organic rice, sustainably processed and perfect for families, businesses, and restaurants.
     </Fragment>
@@ -41,90 +94,47 @@ const metadata = {
     tagline="Why Choose Us"
     title="Our Commitment to Sustainability and Quality"
     subtitle="We take pride in delivering rice products that promote health, sustainability, and regenerative farming practices."
-    items={[
-      {
-        title: 'Regenerative Farming Practices',
-        description: 'Our rice is cultivated using regenerative organic practices to restore soil health and preserve biodiversity.',
-        icon: 'tabler:plant',
-      },
-      {
-        title: 'Certified Quality Standards',
-        description: 'We meet international certifications for food safety, ensuring every grain is fresh, clean, and of the highest quality.',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Eco-Friendly Processing',
-        description: 'Sustainable and energy-efficient processing methods to minimize environmental impact while maintaining freshness.',
-        icon: 'tabler:leaf',
-      },
-    ]}
+    items={[{
+      title: 'Regenerative Farming Practices',
+      description: 'Our rice is cultivated using regenerative organic practices to restore soil health and preserve biodiversity.',
+      icon: 'tabler:plant',
+    }, {
+      title: 'Certified Quality Standards',
+      description: 'We meet international certifications for food safety, ensuring every grain is fresh, clean, and of the highest quality.',
+      icon: 'tabler:certificate',
+    }, {
+      title: 'Eco-Friendly Processing',
+      description: 'Sustainable and energy-efficient processing methods to minimize environmental impact while maintaining freshness.',
+      icon: 'tabler:leaf',
+    }]}
   />
 
-  <style>
-    /* Custom styles for better dark mode compatibility */
-    .dark h3 {
-      color: white;
-    }
-    
-    .dark img {
-      filter: brightness(1.2);
-    }
-    
-    .dark .bg-white {
-      background-color: #1e293b; /* Neutral dark background */
-    }
-    
-    .dark .text-center {
-      color: #cbd5e1; /* Light text for contrast */
-    }
-    </style>
-    
-    <section id="products" class="py-16 bg-gray-100 dark:bg-gray-800">
-      <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Our Products</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Wortel Products -->
-          <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 max-h-96 dark:bg-gray-700">
-            <img src="/assets/images/products/Wortel-5kg.jpg" alt="Wortel 5kg" class="w-full h-64 object-cover rounded-lg">
-            <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 5kg</h3>
-          </div>
-          <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 max-h-96 dark:bg-gray-700">
-            <img src="/assets/images/products/Wortel-10kg.jpg" alt="Wortel 10kg" class="w-full h-64 object-cover rounded-lg">
-            <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 10kg</h3>
-          </div>
-          <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 max-h-96 dark:bg-gray-700">
-            <img src="/assets/images/products/Wortel-20kg.jpg" alt="Wortel 20kg" class="w-full h-64 object-cover rounded-lg">
-            <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 20kg</h3>
-          </div>
-          <!-- Lentera Mas Products -->
-          <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 max-h-96 dark:bg-gray-700">
-            <img src="/assets/images/products/Lentera-20kg.jpg" alt="Lentera Mas 20kg" class="w-full h-64 object-cover rounded-lg">
-            <h3 class="text-xl font-semibold mt-4 dark:text-white">Lentera Mas - 20kg</h3>
-          </div>
+  <!-- Products Section -->
+  <section id="products" class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">Our Products</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Wortel Products -->
+        <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-transform transform hover:scale-105 duration-300 max-h-96 dark:bg-gray-700">
+          <img src="/assets/images/products/Wortel-5kg.jpg" alt="Wortel 5kg" class="w-full h-64 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 5kg</h3>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-transform transform hover:scale-105 duration-300 max-h-96 dark:bg-gray-700">
+          <img src="/assets/images/products/Wortel-10kg.jpg" alt="Wortel 10kg" class="w-full h-64 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 10kg</h3>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-transform transform hover:scale-105 duration-300 max-h-96 dark:bg-gray-700">
+          <img src="/assets/images/products/Wortel-20kg.jpg" alt="Wortel 20kg" class="w-full h-64 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4 dark:text-white">Wortel - 20kg</h3>
+        </div>
+        <!-- Lentera Mas Products -->
+        <div class="p-4 bg-white rounded-lg shadow-lg text-center hover:shadow-xl transition-transform transform hover:scale-105 duration-300 max-h-96 dark:bg-gray-700">
+          <img src="/assets/images/products/Lentera-20kg.jpg" alt="Lentera Mas 20kg" class="w-full h-64 object-cover rounded-lg">
+          <h3 class="text-xl font-semibold mt-4 dark:text-white">Lentera Mas - 20kg</h3>
         </div>
       </div>
-    </section>
-    
-    <!-- Add meta tags for SEO -->
-    <head>
-      <title>Premium Rice Products - Wortel & Lentera Mas</title>
-      <meta name="description" content="Beras Wortel dan Lentera Mas premium dari Palembang. Beras berkualitas tinggi untuk keluarga dan bisnis Anda.">
-      <meta name="keywords" content="beras wortel, beras palembang, cap wortel, capwortel, premium rice, rice Palembang, lentera mas, beras pulen">
-      <meta name="author" content="Premium Rice Factory">
-    
-      <!-- Open Graph / Facebook -->
-      <meta property="og:title" content="Premium Rice Products - Wortel & Lentera Mas">
-      <meta property="og:description" content="Beras Wortel dan Lentera Mas premium dari Palembang. Beras berkualitas tinggi untuk keluarga dan bisnis Anda.">
-      <meta property="og:image" content="src/assets/images/products/Wortel-5kg.jpg">
-      <meta property="og:url" content="https://yourwebsite.com">
-      <meta property="og:type" content="website">
-    
-      <!-- Twitter -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="Premium Rice Products - Wortel & Lentera Mas">
-      <meta name="twitter:description" content="Beras Wortel dan Lentera Mas premium dari Palembang. Beras berkualitas tinggi untuk keluarga dan bisnis Anda.">
-      <meta name="twitter:image" content="src/assets/images/products/Wortel-5kg.jpg">
-    </head>
+    </div>
+  </section>
 
   <!-- About Us Section -->
   <Content
@@ -133,8 +143,6 @@ const metadata = {
     title="Who We Are"
     image={{ src: '~/assets/images/factory.png', alt: 'Rice Factory Image' }}
   >
-
-
     <Fragment slot="content">
       <p>
         At <strong>Premium Rice Factory</strong>, we pride ourselves on delivering top-quality rice. With years of experience and modern processes,
@@ -147,33 +155,47 @@ const metadata = {
   <!-- Contact Section -->
   <CallToAction
     id='contact'
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Chat on WhatsApp',
-        href: 'https://wa.me/62811111111',
-      },
-    ]}
+    actions={[{
+      variant: 'primary',
+      text: '',
+      href: 'https://wa.me/62811111111'
+    }]}
   >
-    <Fragment slot="title">Contact Us</Fragment>
+    <Fragment slot="title">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6 mr-2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75c-4.556 0-8.25 3.694-8.25 8.25 0 1.47.384 2.847 1.054 4.045L3 21l4.955-1.77A8.186 8.186 0 0012 20.25c4.556 0 8.25-3.694 8.25-8.25S16.556 3.75 12 3.75z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 10.5a3 3 0 00-3 3m0 0h-1.5m1.5 0h3m-3 0v-1.5m0 1.5v3" />
+      </svg>
+      Contact Us
+    </Fragment>
     <Fragment slot="subtitle">
       Reach out to place orders or inquire about our rice products. We are here to serve you!
     </Fragment>
   </CallToAction>
 
   <!-- Google Maps Section -->
-  <section id="location" class="py-16 bg-gray-100">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Our Location</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.195351852187!2d104.77318417586093!3d-3.04225009693358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9dd12d779415%3A0x2677bfc867b99900!2sGudang%20TS!5e0!3m2!1sen!2sid!4v1734781396692!5m2!1sen!2sid"
-        width="100%"
-        height="400"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-      <p class="text-lg mt-4">Visit us at Gudang TS</p>
+  <section id="location" class="py-16 bg-gray-100 dark:bg-gray-900">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 dark:text-white">Our Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.195351852187!2d104.77318417586093!3d-3.04225009693358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9dd12d779415%3A0x2677bfc867b99900!2sGudang%20TS!5e0!3m2!1sen!2sid!4v1734781396692!5m2!1sen!2sid"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+    <div class="bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-200 p-6 mt-4 rounded-lg shadow-md">
+      <p class="text-lg">Visit us at Gudang TS</p>
+      <ul class="text-lg">
+        <li>Monday: 8:00 AM - 4:00 PM</li>
+        <li>Tuesday: 8:00 AM - 4:00 PM</li>
+        <li>Wednesday: 8:00 AM - 4:00 PM</li>
+        <li>Thursday: 8:00 AM - 4:00 PM</li>
+        <li>Friday: 8:00 AM - 4:00 PM</li>
+        <li>Saturday: 8:00 AM - 4:00 PM</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 </Layout>
